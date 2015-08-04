@@ -30,5 +30,6 @@ Jasmine, and Webpack.
 ## History
 
 ## Credit
+1. http://kentor.me
 
 ## License
