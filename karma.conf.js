@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
     browsers: [
       //'Chrome'
-        'PhantomJS'
+      'PhantomJS'
       //'PhantomJS', 'Chrome', 'Firefox'
     ],
     singleRun: true,
@@ -22,6 +22,7 @@ module.exports = function(config) {
       require("karma-webpack"),
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
+      require("karma-firefox-launcher"),
       require("karma-phantomjs-launcher"),
       require("karma-sourcemap-loader")
     ],
