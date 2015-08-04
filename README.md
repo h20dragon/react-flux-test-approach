@@ -27,4 +27,8 @@ Jasmine, and Webpack.
 
    ./node_modules/.bin/karma start karma.conf.js --browsers Firefox
    
-   
+## History
+
+## Credit
+
+## License
