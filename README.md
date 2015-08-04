@@ -1,7 +1,7 @@
 # react-flux-test-approach
 
 Sample repository of testing React and Flux (Reflux) with Karma,
-Jasmine, and Webpack.
+Mocha, and Webpack.
 
 ## Installation
 `npm install` 
