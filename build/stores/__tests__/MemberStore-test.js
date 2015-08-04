@@ -1,11 +1,10 @@
+'use strict';
 
-
-
-describe('MemberStore', () => {
+describe('MemberStore', function () {
   var MemberActions;
   var MemberStore;
 
-  beforeEach(() => {
+  beforeEach(function () {
     MemberActions = require('../../actions/MemberActions');
     MemberStore = require('../MemberStore');
 
@@ -13,12 +12,12 @@ describe('MemberStore', () => {
     jasmine.clock().tick();
   });
 
-  it('can add a member', () => {
+  it('can add a member', function () {
     var members = MemberStore.members();
-    expect(members.toJS()).toEqual([{ name: 'foot' }]);
+    expect(members.toJS()).toEqual([{ name: 'foo' }]);
   });
 
-  it('busts the require cache', () => {
+  it('busts the require cache', function () {
     MemberActions.addMember('bar');
     jasmine.clock().tick();
 

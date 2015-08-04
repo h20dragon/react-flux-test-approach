@@ -1,16 +1,16 @@
-var React = require('react');
-var TestUtils = require('react/lib/ReactTestUtils');
+'use strict';
 
-
-describe('MemberList', () => {
+describe('MemberList', function () {
   var MemberList;
+  var React = require('react');
+  var TestUtils = require('react/lib/ReactTestUtils');
 
-  beforeEach(() => {
-    MemberList = require('../../../build/components/MemberList')
+  beforeEach(function () {
+    MemberList = require('../MemberList.jsx');
   });
 
-  it('can add a new member', () => {
-    var c = TestUtils.renderIntoDocument(<MemberList />);
+  it('can add a new member', function () {
+    var c = TestUtils.renderIntoDocument(React.createElement(MemberList, null));
     var input = React.findDOMNode(c.refs.input);
     var submit = React.findDOMNode(c.refs.submit);
 
