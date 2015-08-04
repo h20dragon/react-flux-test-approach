@@ -8,6 +8,10 @@ Jasmine, and Webpack.
 
 ## Usage
 
+### Run Build
+
+`npm run build`
+
 ### Run Tests
 
 `npm test`
