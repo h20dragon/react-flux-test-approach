@@ -8,12 +8,12 @@ Jasmine, and Webpack.
 
 ## Usage
 
-## Run Tests
+### Run Tests
 
 `npm test`
 
 
-## Testing with a specific browser
+### Testing with a specific browser
 
 1. Default (PhantomJS)
 
