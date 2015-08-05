@@ -3,12 +3,27 @@ var path = require('path');
 
 module.exports = function(config) {
   config.set({
+
+    basePath: '',
+
     browsers: [
-      //'Chrome'
-      'PhantomJS'
-      //'PhantomJS', 'Chrome', 'Firefox'
+      'PhantomJS', 'Chrome', 'Firefox'
     ],
-    singleRun: true,
+
+    // enable or disable colors in the output (reporters and logs)
+    colors: true,
+
+    exclude: ['karma.conf.js'],
+
+    externals: ['sinon'],
+
+    frameworks: ['mocha', 'chai', 'chai-sinon'],
+
+
+    // list of files and patterns to load in the browser
+//    files: [
+//      'tests.webpack.js'
+//    ],
     files: [
       {
         pattern: 'tests.webpack.js',
@@ -17,10 +32,9 @@ module.exports = function(config) {
 //        'node_modules/react/react.js',
       'node_modules/babel-core/browser-polyfill.js'
     ],
-    frameworks: ['mocha', 'chai', 'chai-sinon'],
+
 
     plugins: [
-
       require("karma-mocha"),
       require("karma-chrome-launcher"),
       require("karma-firefox-launcher"),
@@ -29,24 +43,23 @@ module.exports = function(config) {
       require("karma-chai"),
       require("karma-chai-sinon"),
       require("karma-jasmine"),
+      require("karma-coverage"),
       require("karma-sourcemap-loader")
     ],
 
-    externals: ['sinon'],
-
-    files: [
-      'tests.webpack.js'
-    ],
-    // end 001
     preprocessors: {
       'tests.webpack.js': [
         'webpack',
         'sourcemap'  // 001
       ],
     },
+
     reporters: [
       'dots',
     ],
+
+    singleRun: true,
+
     webpack: {
       devtool: 'inline-source--map',
       plugins: [
@@ -60,8 +73,10 @@ module.exports = function(config) {
       },
       watch: true,
     },
+
     webpackServer: {
       noInfo: true,
     },
+
   });
 };
