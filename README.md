@@ -9,7 +9,14 @@ Sample repository of testing React and Flux (Reflux) with Karma,
 ## Usage
 
 ### Build
-`npm run build`
+
+1. Clean
+
+   `npm run clean`
+   
+2. Build
+
+   `npm run build`
 
 ### Run Tests
 
