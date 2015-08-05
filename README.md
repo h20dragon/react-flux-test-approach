@@ -3,6 +3,12 @@
 Sample repository of testing React and Flux (Reflux) with Karma,
 `Mocha`, and Webpack.
 
+The testing approach is:
+
+1. bundle all tests into a single file
+2. the single file is loaded by Karma
+3. Karma runs that single file, containing all tests, in the browser under test.
+
 ## Installation
 `npm install` 
 
@@ -22,7 +28,15 @@ Sample repository of testing React and Flux (Reflux) with Karma,
 
 `npm test`
 
+### Filtering which tests to execute
 
+1. Edit `tests.webpack.js`
+2. Modify the following line with the proper regEx.
+
+   examples:
+     - var context = require.context('./build', true, `/MemberList-test\.js?$/`);
+     - var context = require.context(`'./build/tests'`, true, `/-test\.js?$/`);
+      
 ### Testing with a specific browser
 
 #### karma.conf.js
