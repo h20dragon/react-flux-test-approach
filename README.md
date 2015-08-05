@@ -1,12 +1,15 @@
 # react-flux-test-approach
 
 Sample repository of testing React and Flux (Reflux) with Karma,
-Mocha, and Webpack.
+`Mocha`, and Webpack.
 
 ## Installation
 `npm install` 
 
 ## Usage
+
+### Build
+`npm run build`
 
 ### Run Tests
 
@@ -14,6 +17,11 @@ Mocha, and Webpack.
 
 
 ### Testing with a specific browser
+
+#### karma.conf.js
+
+Update the `browsers` config setting as needed, or you can specify which browser to test against
+with the `--browsers` option using `karma` from the command line.
 
 1. Default (PhantomJS)
 
