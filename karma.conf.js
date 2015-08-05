@@ -1,3 +1,6 @@
+var webpack = require('webpack');
+var path = require('path');
+
 module.exports = function(config) {
   config.set({
     browsers: [
@@ -14,18 +17,23 @@ module.exports = function(config) {
 //        'node_modules/react/react.js',
       'node_modules/babel-core/browser-polyfill.js'
     ],
-    frameworks: [
-      'jasmine'
-    ],
-    // 001
+    frameworks: ['mocha', 'chai', 'chai-sinon'],
+
     plugins: [
-      require("karma-webpack"),
-      require("karma-jasmine"),
+
+      require("karma-mocha"),
       require("karma-chrome-launcher"),
       require("karma-firefox-launcher"),
       require("karma-phantomjs-launcher"),
+      require("karma-webpack"),
+      require("karma-chai"),
+      require("karma-chai-sinon"),
+      require("karma-jasmine"),
       require("karma-sourcemap-loader")
     ],
+
+    externals: ['sinon'],
+
     files: [
       'tests.webpack.js'
     ],
@@ -41,6 +49,10 @@ module.exports = function(config) {
     ],
     webpack: {
       devtool: 'inline-source--map',
+      plugins: [
+          new webpack.NoErrorsPlugin()
+      ],
+      externals: ['sinon'],
       module: {
         loaders: [
           { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
